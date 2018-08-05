@@ -30,3 +30,14 @@ function regGetCookie(key) {
     var reg = new RegExp('.*([^;&]*' + key + '=)(.*?)([;&]|$).*');
     return cookie.replace(reg,'$2')
 }
+
+/**
+ * [encryptPhone description]
+ * @author Hackshen
+ * @email  hackshen.com@gmail.com
+ * @param  num [传入的手机号]
+ */
+function regPhone(num){
+    if(!num) return;
+    return num.replace(/^(\d{3})(\d{4})(\d+)/, '$1$2****')
+}
