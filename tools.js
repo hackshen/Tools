@@ -1,3 +1,9 @@
+/**
+ * [regGetCookie description]
+ * @author Hackshen
+ * @email  hackshen.com@gmail.com
+ * @param  key [需要获取的Key]
+ */
 function getCookie(name) {
     if(document.cookie.length > 0) {
         var cookies = document.cookie.replace(/&/g, ';');
@@ -10,4 +16,17 @@ function getCookie(name) {
         }
     }
     return "";
+}
+
+/**
+ * [regGetCookie description]
+ * @author Hackshen
+ * @email  hackshen.com@gmail.com
+ * @param  key [需要获取的Key]
+ */
+function regGetCookie(key) {
+    var cookie = document.cookie;
+    if (cookie.indexOf(key) === -1) return '';
+    var reg = new RegExp('.*([^;&]*' + key + '=)(.*?)([;&]|$).*');
+    return cookie.replace(reg,'$2')
 }
